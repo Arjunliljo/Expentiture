@@ -15,6 +15,6 @@ export const client = createClient({
   // Enhanced timeout and retry configuration
   timeout: 60000, // 60 seconds timeout
   maxRetries: 3,
-  retryDelay: 1000, // 1 second delay between retries
+  retryDelay: (attemptNumber) => 1000 * attemptNumber, // Progressive delay between retries
   ignoreBrowserTokenWarning: true,
 })

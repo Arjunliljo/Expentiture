@@ -1,8 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+	serverExternalPackages: ['@sanity/client'],
 	experimental: {
-		serverComponentsExternalPackages: ['@sanity/client'],
 		serverComponentsHmrCache: false,
 	},
 	images: {

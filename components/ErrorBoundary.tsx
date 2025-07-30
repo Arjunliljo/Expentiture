@@ -37,15 +37,14 @@ export class ErrorBoundary extends Component<Props, State> {
 			let errorMessage = 'Something went wrong';
 			let suggestion = 'Please try refreshing the page';
 
-			if (isTimeoutError(error)) {
-				errorMessage = 'Request timed out';
-				suggestion = 'The server is taking longer than expected. Please wait a moment and try again';
-			} else if (isNetworkError(error)) {
-				errorMessage = 'Network error occurred';
-				suggestion = 'Please check your internet connection and try again';
-			} else if (error?.message?.includes('fetch')) {
-				errorMessage = 'Failed to load content';
-				suggestion = 'There may be a temporary issue with the server. Please try again';
+			if (error) {
+				if (isTimeoutError(error)) {
+					errorMessage = 'Request timed out';
+					suggestion = 'The server is taking longer than expected. Please wait a moment and try again';
+				} else if (isNetworkError(error)) {
+					errorMessage = 'Network error occurred';
+					suggestion = 'Please check your internet connection and try again';
+				}
 			}
 
 			return (

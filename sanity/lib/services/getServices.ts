@@ -29,7 +29,7 @@ async function getServices() {
 				"Failed to fetch services - request timed out"
 			);
 		},
-		{ data: [] }, // Fallback to empty services array
+		{ data: [], sourceMap: null, tags: [] }, // Fallback to empty services array
 		"Failed to fetch services, using empty fallback"
 	);
 

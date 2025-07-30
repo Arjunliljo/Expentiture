@@ -29,7 +29,7 @@ async function getAllInsights() {
 				"Failed to fetch insights - request timed out"
 			);
 		},
-		{ data: [] }, // Fallback to empty insights array
+		{ data: [], sourceMap: null, tags: [] }, // Fallback to empty insights array
 		"Failed to fetch insights, using empty fallback"
 	);
 

@@ -15,7 +15,7 @@ async function getSiteSettings() {
 				"Failed to fetch site settings - request timed out"
 			);
 		},
-		{ data: null }, // Fallback to null
+		{ data: null, sourceMap: null, tags: [] }, // Fallback to null
 		"Failed to fetch site settings, using fallback"
 	);
 

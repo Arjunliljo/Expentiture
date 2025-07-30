@@ -22,7 +22,7 @@ async function getTestimonial() {
 				"Failed to fetch testimonials - request timed out"
 			);
 		},
-		{ data: [] }, // Fallback to empty testimonials array
+		{ data: [], sourceMap: null, tags: [] }, // Fallback to empty testimonials array
 		"Failed to fetch testimonials, using empty fallback"
 	);
 

@@ -11,14 +11,10 @@ export const { sanityFetch, SanityLive } = defineLive({
 		apiVersion: "2024-01-01", // Use stable API version
 		timeout: 30000, // 30 seconds for live queries
 		maxRetries: 3,
-		retryDelay: 1000,
+		retryDelay: (attemptNumber) => 1000 * attemptNumber,
 		useCdn: true,
 	}),
 
 	serverToken: token,
-	browserToken: token,
-	fetchOptions: {
-		cache: 'no-store',
-		next: { revalidate: 30 },
-	}
+	browserToken: token
 });
